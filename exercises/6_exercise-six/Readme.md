@@ -41,7 +41,7 @@ You have successfully completed exercise-one
 ## Step Three - Execute Monaco command
 1. Go to the exercise one folder
     ```bash
-    cd exercises/1_exercise-one
+    cd monaco-hot/exercises/1_exercise-one
     ```
 2. Run Monaco 
 

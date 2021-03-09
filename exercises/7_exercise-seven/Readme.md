@@ -4,7 +4,7 @@ In this exercise we will show how we can link multiple configurations together w
 We will reference them using Monaco config instances and let Monaco figure out the IDs, dependencies and priorities!
 
 ## Step 1 - Take a look at the project
-Navigate to `exercises/7_exercise-seven`.
+Navigate to `monaco-hot/exercises/7_exercise-seven`.
 You will find a standard monaco setup:
 ```bash
 ├── Readme.md
@@ -98,17 +98,17 @@ Commit these changes in gitea
 
 Similarly as in step 2, modify the `notification` to link to the `alerting-profile` 
 
-## Step 4 - Trigger the pipeline
+## Step 4 - Run Monaco
 
 1. Ensure your `DT_API_TOKEN` and `DT_TENANT_URL` environment variables are set
 2. On the command line, navigate to the `monaco-hot/exercises/7_exercise-seven` folder.
 3. Within the folder, execute the following command to do a dry-run of all projects
     ```bash
-    $ monaco -v -dry-run -e=environments.yaml /projects/
+    $ monaco -v -dry-run -e=environments.yaml projects/
     ```
 4. Once validated, remove the dry-run flag and run again:
     ```bash
-    $ monaco -v -e=environments.yaml /projects/
+    $ monaco -v -e=environments.yaml projects/
     ```
 
 ## Step 5 - View results in Dynatrace

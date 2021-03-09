@@ -28,9 +28,6 @@ Explore the contents of the `exercises/2_exercise-two` folder. It looks like thi
     |   |-- request-attributes
     |   |   |-- request-attribute.json
     |   |   `-- request-attribute.yaml
-    |   `-- synthetic-location
-    |       |-- private-synthetic.json
-    |       `-- synthetic-location.yaml
     `-- perform
         |-- app-detection-rule
         |   |-- rule.json
@@ -60,11 +57,8 @@ Navigate to the contents of `exercises/2_exercise-two`, and see which configurat
 
 
 ### The environments.yaml file
-On the first line of the Jenkinsfile we find the following:
-```
-ENVS_FILE = "monaco/exercise-two/environments.yaml"
-```
-This file looks like this (you can verify this using Gitea):
+Open the environments file: `2_exercise-two/environments.yaml`
+This file looks like this:
 ```yaml
 perform:
   - name: "perform"
@@ -106,7 +100,7 @@ Once we are familiar with the project structure and the contents, it is time to 
     $ monaco -v -e=environments.yaml -p=global projects/
     ```
 
-Repeat steps 2 and 3 for the **perform** project. Alternatively, you can also remove the `-p` flag to apply all projects.
+4. Repeat steps 2 and 3 for the **perform** project. Alternatively, you can also remove the `-p` flag to apply all projects.
 
 ## Step 3 - View results in Dynatrace
 

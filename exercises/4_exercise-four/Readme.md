@@ -21,9 +21,6 @@ Using gitea, explore the contents of the `exercises/4_exercise_four` folder. It 
     |   |-- request-attributes
     |   |   |-- request-attribute.json
     |   |   `-- request-attribute.yaml
-    |   `-- synthetic-location
-    |       |-- private-synthetic.json
-    |       `-- synthetic-location.yaml
     `-- perform
         |-- app-detection-rule
         |   |-- rule.json
@@ -206,15 +203,15 @@ To do so, using gitea, find the file and edit it.
 On line 4, find the field `costControlUserSessionPercentage` and see that the value is hardcoded to `10`:
 
 ```json 
-"costControlUserSessionPercentage": 10,
+"costControlUserSessionPercentage": 100,
 ```
 
-Turn the value of that field (`10`) into a variable:
+Turn the value of that field (`100`) into a variable:
 
 ```json 
 "costControlUserSessionPercentage": "{{ .uemPercentage }}",
 ```
-**Note**: we need to surround the variable placeholders with double quotes `"`, even if it is not a string value.
+
 **Note**: the `.` in front of `uemPercentage` is required
 
 Save the changes.
@@ -236,19 +233,20 @@ app-app-two:
     - name: "app-two"
     - uemPercentage: "50"
 ```
+> Note: the double quotes(`"`) around the attribute value are required.
 
-Sace the changes.
+Save the changes.
 
-## Step 4 - Run the pipeline
+## Step 4 - Run monaco
 
 1. On the command line, navigate to the `monaco-hot/exercises/4_exercise_four` folder.
 2. Within the folder, execute the following command to do a dry-run of all projects
     ```bash
-    $ monaco -v -dry-run -e=environments.yaml /projects/
+    $ monaco -v -dry-run -e=environments.yaml projects/
     ```
 3. Once validated, remove the dry-run flag and run again:
     ```bash
-    $ monaco -v -e=environments.yaml /projects/
+    $ monaco -v -e=environments.yaml projects/
     ```
 
 > Note: by removing the `-p` flag, all projects will be processed

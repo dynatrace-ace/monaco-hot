@@ -36,10 +36,10 @@ We will review the monaco Project structure and will use your IDE or text editor
    3. For security reasons you should not place your environment token directly in a file.
    4. Update the env-url value to your Dynatrace Tenant address (ensure there is no trailing `/` on the end of the URL)
    5. Save the changes
-3. Return to the `projects` folder. Here you'll find a folder called `perform` (referenced in our environments.yaml) that contains another folder called `auto-tag` with two files `auto-tag.json` and `auto-tag.yaml`. 
+3. Return to the `projects` folder. Here you'll find a folder called `perform` (referenced in our `environments.yaml`) that contains another folder called `auto-tag` with two files `auto-tag.json` and `auto-tag.yaml`. 
    1. Both files contain only placeholders for the repository. We'll need to update them.
-   2. The .json file is a template used for our API payload we plan to send for tagging. 
-   3. The .yaml file is used for the configuration we want to populate our .json with. The .yaml file can contain multiple configurations that can build different tag names and rules as monaco will iterate through each config and apply it to the template. In this scenario we're simply applying a single automatic tagging rule called 'Owner'.
+   2. The `.json` file is a template used for our API payload we plan to send for tagging. 
+   3. The `.yaml` file is used for the configuration we want to populate our `.json` with. The .yaml file can contain multiple configurations that can build different tag names and rules as monaco will iterate through each config and apply it to the template. In this scenario we're simply applying a single automatic tagging rule called 'Owner'.
 
 ## Step Three - Build the Monaco JSON from the Dynatrace API
 A great way to start building your monaco project is based off existing Dynatrace configuration. Even if you're starting with a fresh Dynatrace environment it may be worth creating a sample configuration in the UI first. This way we'll use the Dynatrace API to extract the properties of the configuration we'd like to use in monaco. From there you can use your configuration yaml file to add additional configuration.
@@ -75,13 +75,9 @@ Next we'll use the `GET` for `/autoTags/{id}` endpoint
     ![Tagconfigjson](Resources/Tagconfigjson.png)
 
 7. Copy the entire Response body to your clipboard.
-8. Open Gitea and navigate to monaco -> exercise-one -> projects -> perform ->  auto-tag and open the auto-tag.json file.
-9. Edit the file
-
-    ![editjson](Resources/Editjson.png)
-
-10. remove the placeholder and paste the copied response body from the Dynatrace API output.
-11. Once the JSON is pasted into the file, remove lines 2-8. Lines 2-8 are identifiers of the existing configuration that are not accepted when creating a new configuration in the next step. The desired file contents can also be copied from these instructions below.
+8. Open the file `exercises/1_exercise-one/projects/perform/auto-tag/auto-tag.json` with a text editor.
+9. Remove the placeholder and paste the copied response body from the Dynatrace API output.
+10. Once the JSON is pasted into the file, remove lines **2-8**. Lines 2-8 are identifiers of the existing configuration that are not accepted when creating a new configuration in the next step. The desired file contents can also be copied from these instructions below.
     ```json
     {
       "name": "Owner",
@@ -117,9 +113,7 @@ Next we'll use the `GET` for `/autoTags/{id}` endpoint
     }
     ```
 
-
-
-12. Commit the file
+11. Save the file
 
 ## Step Four - Build the Config YAML
 
